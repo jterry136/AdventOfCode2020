@@ -18,6 +18,7 @@ public class InputSummer {
 		
 		ArrayList<Integer> numbers1 = new ArrayList<Integer>();
 		ArrayList<Integer> numbers2 = new ArrayList<Integer>();
+		ArrayList<Integer> numbers3 = new ArrayList<Integer>();
 		
 		try {
 			Scanner fileData = new Scanner(input);
@@ -25,6 +26,7 @@ public class InputSummer {
 				int value = Integer.parseInt(fileData.nextLine());
 				numbers1.add(value);
 				numbers2.add(value);
+				numbers3.add(value);
 			}
 			
 			for(Integer i : numbers1) {
@@ -33,8 +35,10 @@ public class InputSummer {
 			
 			for(int i = 0; i < numbers1.size(); i++) {
 				for(int j = 0; j < numbers2.size(); j++) {
-					if(numbers1.get(i) + numbers2.get(j) == 2020) {
-						System.out.println("ANSWER: " + numbers1.get(i) * numbers2.get(j));
+					for(int k = 0; k < numbers3.size(); k++) {
+						if(numbers1.get(i) + numbers2.get(j) + numbers3.get(k) == 2020) {
+							System.out.println("ANSWER: " + numbers1.get(i) * numbers2.get(j) * numbers3.get(k));
+						}
 					}
 				}
 			}
